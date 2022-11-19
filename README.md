@@ -8,15 +8,15 @@ Dataset should be downloaded separately from the link above. The downloaded data
 Note: The structure of the dataset directory should be kept as it is when newly downloaded.
 
 RECOMMENDED: FOLLOWING THIS PROCEDURE TO EASE THE DOWNLOADING DATA WITH ONLY ONE COMMAND LATER ON
-    (If kaggle has been setup on your machine, step 1 and 2 can be skipped.)
-    1. Install kaggle to allow API downloading
-        $ pip install kaggle
-      This step will also create a ".kaggle" folder. On Windows machine, the default location is "C:\{user}\.kaggle"
-    2. Get API user credentials
-        - Log into your kaggle account
-        - Go to "Account"
-        - Click on "Create New API Token"
-        - Save the to-be-downloaded "kaggle.json" to the ".kaggle\kaggle.json"
-    3. Now, kaggle has been setup. Datasets can be downloaded using Kaggle API with one command (Example for this project)
-        $ kaggle datasets download -d grassknoted/asl-alphabet -p ./data.zip --unzip
-      The command will download the data needed for this project, rename and unzip it. No more setup steps are needed.
+    <br />(If kaggle has been setup on your machine, step 1 and 2 can be skipped.)
+    <br />1. Install kaggle to allow API downloading
+        <br />$ pip install kaggle
+      <br />This step will also create a ".kaggle" folder. On Windows machine, the default location is "C:\{user}\.kaggle"
+    <br />2. Get API user credentials
+        <br />- Log into your kaggle account
+        <br />- Go to "Account"
+        <br />- Click on "Create New API Token"
+        <br />- Save the to-be-downloaded "kaggle.json" to the ".kaggle\kaggle.json"
+    <br />3. Now, kaggle has been setup. Datasets can be downloaded using Kaggle API with one command (Example for this project)
+        <br />$ kaggle datasets download -d grassknoted/asl-alphabet -p ./data.zip --unzip
+      <br />The command will download the data needed for this project, rename and unzip it. No more setup steps are needed.
