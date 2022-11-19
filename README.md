@@ -25,7 +25,7 @@ RECOMMENDED: FOLLOWING THIS PROCEDURE TO EASE THE DOWNLOADING DATA WITH ONLY ONE
         <li>3. Now, kaggle has been setup. Datasets can be downloaded using Kaggle API with one command (Example for this project)</li>
             <ul>
                 <li>Note: Make sure that this repository directory is the current working directory</li>
-                <li>$ kaggle datasets download -d grassknoted/asl-alphabet -p ./data.zip --unzip</li>
-                <li>The command will download the data needed for this project, rename and unzip it. No more setup steps are needed.</li>
+                <li>$ kaggle datasets download -d grassknoted/asl-alphabet -p ./data --unzip</li>
+                <li>The command will download the data needed for this project, rename and unzip it. A new data folder is then accessible from "ASL_American_Sign_Language_To_Speech\data".</li>
             </ul>
     </ul>
