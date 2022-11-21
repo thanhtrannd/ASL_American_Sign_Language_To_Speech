@@ -5,6 +5,7 @@
 *.zip
 *.jpg
 
+*.asv
 # Prerequisites
 *.d
 

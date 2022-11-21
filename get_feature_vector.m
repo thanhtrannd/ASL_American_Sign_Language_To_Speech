@@ -26,6 +26,12 @@ I = rgb2gray(I_RGB);
 % Performing edge detection using canny
 
 bw = edge(I,'canny');
+
+% visualization
+figure;
+imshow(bw)
+title('Canny Filter')
+%%%%%%
 numberOfBins = 256;
 [r, cl, x] = size(bw);
 [pixelCount, grayLevels] = imhist(bw);
@@ -70,13 +76,13 @@ imshowpair(I,BW,'montage');
 
 measurements = regionprops(CC);
 
-sample(8)=measurements.Area;
-sample(9)=measurements.Centroid(1);
-sample(10)=measurements.Centroid(2);
-sample(11)=measurements.BoundingBox(1);
-sample(12)=measurements.BoundingBox(2);
-sample(13)=measurements.BoundingBox(3);
-sample(14)=measurements.BoundingBox(4);
+sample(8)=measurements(1).Area;
+sample(9)=measurements(1).Centroid(1);
+sample(10)=measurements(1).Centroid(2);
+sample(11)=measurements(1).BoundingBox(1);
+sample(12)=measurements(1).BoundingBox(2);
+sample(13)=measurements(1).BoundingBox(3);
+sample(14)=measurements(1).BoundingBox(4);
 
 % Plotting the boundingbox
 for k = 1 : length(measurements)
@@ -87,9 +93,6 @@ end
 
 
 %% Feature No. 11 Extracting SIFT Features
-
-I_RGB = imread('A1.jpg');
-I = rgb2gray(I_RGB);
 
 SIFT_points = detectSIFTFeatures(I)
 
