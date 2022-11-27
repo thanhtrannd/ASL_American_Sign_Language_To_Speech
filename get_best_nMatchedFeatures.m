@@ -1,5 +1,5 @@
 function bestnMatches = get_best_nMatchedFeatures(I, visual)
-    load templates.mat Xtemplates_filename Ytemplates
+    load extracted_features\templates.mat Xtemplates_filename Ytemplates
     if nargin  < 2
         visual = false;
     end
