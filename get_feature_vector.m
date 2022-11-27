@@ -13,12 +13,12 @@ function sample = get_feature_vector(I_RGB)
 sample = zeros(1,18);
 
 %% Feature No.1, No.2, No.3 => Mean of RGB Channels
-
-mean_rgb = avgpict(I_RGB);
-
-sample(1)=mean_rgb(1);
-sample(2)=mean_rgb(2);
-sample(3)=mean_rgb(3);
+% 
+% mean_rgb = avgpict(I_RGB);
+% 
+% sample(1)=mean_rgb(1);
+% sample(2)=mean_rgb(2);
+% sample(3)=mean_rgb(3);
 
 %% Feature No.4 Number of edge pixels Using "Canny Edge Detector"
 
@@ -26,6 +26,19 @@ I = rgb2gray(I_RGB);
 % Performing edge detection using canny
 
 bw = edge(I,'canny');
+
+region = regionprops(bw);  %test
+% Plotting the boundingbox
+figure;
+imshow(bw); hold on;
+for k = 1 : length(region)
+  thisBB = region(k).BoundingBox;
+  rectangle('Position', [thisBB(1),thisBB(2),thisBB(3),thisBB(4)],...
+  'EdgeColor','r','LineWidth',2 );
+end
+legend
+hold off;
+
 
 % visualization
 figure;
@@ -35,7 +48,7 @@ title('Canny Filter')
 numberOfBins = 256;
 [r, cl, x] = size(bw);
 [pixelCount, grayLevels] = imhist(bw);
-count_edge_pixels = pixelCount(2);
+count_edge_pixels = pixelCount(2)
 sample(4)=count_edge_pixels;
 
 %% Feature No.5 Contrast of Image
