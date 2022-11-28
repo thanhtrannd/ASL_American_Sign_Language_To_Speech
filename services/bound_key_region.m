@@ -1,4 +1,4 @@
-function SIFT_points = bound_key_region(I, visual)
+function [SIFT_points, Icropped] = bound_key_region(I, visual)
     if length(size(I)) > 2
         I = rgb2gray(I);
     end
@@ -19,14 +19,14 @@ function SIFT_points = bound_key_region(I, visual)
     nPoints = length(ORB_points);
     % Selecting bounding box
     rank = zeros(1, nRegions);
-    BB_S = [regions(:).Area];
+    BB_S = [];
     for i = 1:nRegions
         BB = regions(i).BoundingBox;
-%         S = BB(3) * BB(4);
-%         BB_S = [BB_S S];
+        S = BB(3) * BB(4);
+        BB_S = [BB_S S];
 
         inside_points = zeros(1, nPoints);
-        parfor p = 1:nPoints
+        for p = 1:nPoints
             is_inside = is_inside_rectangle(ORB_points(p).Location, BB(1), BB(2), BB(3), BB(4));
             inside_points(p) = is_inside;
         end
@@ -34,11 +34,15 @@ function SIFT_points = bound_key_region(I, visual)
         nPointsInside = sum(inside_points);
         rank(i) = nPointsInside;
     end
-
+    rank
     rate = 0.9;
     all_points_BB = [];
+    min_rate = 0.7;
     while isempty(all_points_BB)
         all_points_BB = find(rank >= rate * nPoints);
+        if (length(all_points_BB) < 2) && (rate > min_rate)
+            all_points_BB = [];
+        end
         rate = rate - 0.05;
     end
     [~,selected_BB] = min(BB_S(all_points_BB));
