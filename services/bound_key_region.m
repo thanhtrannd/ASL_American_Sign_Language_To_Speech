@@ -34,7 +34,6 @@ function [SIFT_points, Icropped] = bound_key_region(I, visual)
         nPointsInside = sum(inside_points);
         rank(i) = nPointsInside;
     end
-    rank
     rate = 0.9;
     all_points_BB = [];
     min_rate = 0.7;
