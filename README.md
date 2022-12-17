@@ -13,7 +13,7 @@ RECOMMENDED: FOLLOWING THIS PROCEDURE TO EASE THE DOWNLOADING DATA WITH ONLY ONE
         <li>1. Install kaggle to allow API downloading</li>
             <ul>
                 <li>$ pip install kaggle</li>
-                <li>This step will also create a ".kaggle" folder. On Windows machine, the default location is "C:\{user}\.kaggle"</li>
+                <li>This step will also create a ".kaggle" folder. On Windows machine, the default location is "C:\\{user}\\.kaggle"</li>
             </ul>
         <li>2. Get API user credentials</li>
             <ul>
