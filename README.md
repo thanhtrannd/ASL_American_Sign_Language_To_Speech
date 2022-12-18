@@ -2,7 +2,7 @@
 
 
 Data can be downloaded from https://www.kaggle.com/datasets/grassknoted/asl-alphabet.
-Procedure and results were documented and can be accessed from https://lut-my.sharepoint.com/:w:/g/personal/thanh_tran_student_lut_fi/ERNxVSaZ6XhNpJh_Ecmp26oBjcnu5nnDq8oLbyhCxCxUwQ?e=zyI6df
+Procedure and results were documented and can be accessed from https://lut-my.sharepoint.com/:w:/g/personal/thanh_tran_student_lut_fi/ERNxVSaZ6XhNpJh_Ecmp26oBOtcaGtWC5TtH-ybKX2-_Uw?e=b4NvR2
 
 Dataset should be downloaded separately from the link above. The downloaded dataset folder should be unzipped and renamed to "data" which should be placed in the main directory "ASL_American_Sign_Language_To_Speech/data" (relative path)
 
